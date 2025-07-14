@@ -1,0 +1,32 @@
+# 📦 Ignorar dependencias de Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# 🛠️ Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# 💻 Archivos de entorno (si usas dotenv en el futuro)
+.env
+.env.local
+
+# 🧪 Cobertura de tests (si los agregas luego)
+coverage/
+
+# ⚙️ Configuración de editor
+.vscode/
+.idea/
+
+# 🚫 Salida de Webpack del tema
+template/assets/dist/
+
+# 💥 Archivos de paquetes bloqueados (opcional, depende de política del equipo)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# 🧪 Archivos de prueba
+template/**/__tests__/
+template/**/*.test.js
+template/**/*.spec.js

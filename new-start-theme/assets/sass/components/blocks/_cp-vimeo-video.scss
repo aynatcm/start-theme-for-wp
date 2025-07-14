@@ -1,0 +1,12 @@
+.vimeoVideo {
+    &__wrapper {
+        max-width: 1240px;
+        width: 100%;
+
+        iframe {
+            border-radius: 20px;
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+    }
+}

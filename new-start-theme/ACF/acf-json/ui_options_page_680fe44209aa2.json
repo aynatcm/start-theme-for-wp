@@ -1,0 +1,26 @@
+{
+    "key": "ui_options_page_680fe44209aa2",
+    "title": "Calculator options",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Calculator options",
+    "menu_slug": "calculator_options",
+    "parent_slug": "none",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "",
+    "position": "",
+    "redirect": 0,
+    "description": "",
+    "menu_icon": {
+        "type": "dashicons",
+        "value": "dashicons-calculator"
+    },
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1745878116
+}

@@ -1,0 +1,46 @@
+.slider {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+
+    @include m_query($bp-lg) {
+        padding: 40px;
+    }
+
+    &__title {
+        font-size: var(--fs-4);
+        font-weight: 700;
+        color: var(--c-primary);
+        line-height: normal;
+        max-width: 50%;
+
+        @include m_query($bp-md) {
+            font-size: 35px;
+            max-width: 100%;
+        }
+    }
+
+    swiper-container {
+        width: 100%;
+        height: 100%;
+        margin-top: 40px;
+    }
+
+    swiper-slide {
+        text-align: center;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-width: 100px;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+
+            @include m_query($bp-md) {
+                max-width: 80px;
+            }
+        }
+    }
+}

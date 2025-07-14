@@ -1,0 +1,212 @@
+.teamCards {
+  padding-block: 80px;
+
+  @include m_query($bp-md) {
+    padding-block: 40px;
+  }
+
+  &--wrapper {
+    display: flex;
+    max-width: 1440px;
+    width: 100%;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+
+    @include m_query($bp-md) {
+      gap: 30px;
+    }
+
+    @include m_query($bp-sm) {
+      gap: 20px;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      justify-content: center;
+      align-items: center;
+
+      &-subtitle {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: 10%;
+        color: #1BB3BC;
+        text-transform: uppercase;
+        font-family: $font__main;
+      }
+
+      &-title {
+        color: #201F1E;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 47px;
+        text-align: center;
+        font-family: $font__main;
+
+        @include m_query($bp-md) {
+          font-size: 32px;
+          line-height: normal;
+        }
+
+        @include m_query($bp-sm) {
+          font-size: 28px;
+        }
+      }
+
+    }
+
+    &-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+
+      @include m_query(1200px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include m_query($bp-md) {
+        grid-template-columns: 1fr;
+      }
+
+      &-item {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &:only-child {
+          grid-column: 2; /* Lo coloca en la columna central */
+        }
+
+        &-image {
+          width: 100%;
+          height: 460px;
+          border-radius: 8px;
+          object-fit: cover;
+
+          @include m_query($bp-lg) {
+            height: 400px;
+          }
+
+          @include m_query($bp-md) {
+            height: 360px;
+          }
+
+          @include m_query($bp-sm) {
+            height: 300px;
+          }
+        }
+
+        &-info {
+          display: flex;
+          flex-direction: column;
+
+          &-name {
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 38px;
+            color: #201F1E;
+            font-family: $font__main;
+
+            @include m_query($bp-md) {
+              font-size: 28px;
+              line-height: normal;
+            }
+
+            @include m_query($bp-sm) {
+              font-size: 24px;
+            }
+          }
+
+          &-position {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 28px;
+            color: #777472;
+            font-family: $font__main;
+
+            @include m_query($bp-md) {
+              font-size: 20px;
+              line-height: normal;
+            }
+
+            @include m_query($bp-sm) {
+              font-size: 16px;
+            }
+          }
+
+          &-description {
+            padding-block: 10px;
+            * {
+              font-weight: 400;
+              font-size: 16px;
+              color: var(--c-black);
+              font-family: $font__main;
+            }
+          }
+        }
+
+        &-medias {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          &-media {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &-icon {
+              width: 30px;
+              height: 30px;
+              background-color: #000;
+              border-radius: 50%;
+              padding: 7px;
+            }
+
+            &-link {
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 28px;
+              color: #777472;
+              flex: 1;
+              font-family: $font__main;
+              transition: var(--g-trans);
+
+              &:hover {
+                color: var(--c-aqua);
+              }
+
+              @include m_query($bp-md) {
+                font-size: 16px;
+                line-height: normal;
+              }
+
+              @include m_query($bp-sm) {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cta--member {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding: 12px 24px;
+    font-family: $font__main;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+  }
+}

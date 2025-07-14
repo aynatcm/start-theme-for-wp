@@ -1,0 +1,95 @@
+.container--breadcrum {
+  position: relative;
+  height: 600px;
+
+  @include m_query($bp-md) {
+    height: 400px;
+  }
+
+  .container--overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .container--video-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    height: 100%;
+
+    .image--breadcrum {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video--breadcrum {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  .container--wrapper {
+    height: 100%;
+
+    .container--info-breadcrum {
+      z-index: 3;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .breadcrum--title {
+        font-family: $font__main;
+        font-weight: 800;
+        font-size: 68px;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+
+        @include m_query(1024px) {
+          font-size: 52px;
+        }
+
+        @include m_query($bp-md) {
+          font-size: 44px;
+        }
+
+        @include m_query($bp-sm) {
+          font-size: 36px;
+        }
+      }
+
+      .breadcrum--subtitle {
+        font-family: $font__main;
+        font-weight: 400;
+        font-size: 24px;
+        color: white;
+        text-transform: initial;
+        text-align: center;
+
+        @media (max-width: 768px) {
+          font-size: 18px;
+        }
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,13 @@
+{
+  "name": "create-wp-theme",
+  "version": "1.0.0",
+  "description": "Starter theme maruchan para Wordpress por kronoscode",
+  "type": "module",
+  "bin": {
+    "create-wp-theme": "./bin/index.js"
+  },
+  "dependencies": {
+    "inquirer": "^9.0.0",
+    "fs-extra": "^11.0.0"
+  }
+}

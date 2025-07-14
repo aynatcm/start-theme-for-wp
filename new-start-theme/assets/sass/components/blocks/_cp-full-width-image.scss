@@ -1,0 +1,143 @@
+.full-width-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 40px;
+  position: relative;
+  flex-direction: column;
+  gap: 20px;
+  padding-block: 20px;
+
+
+  @include m_query($bp-lg) {
+    padding-inline: 30px;
+  }
+
+  @include m_query($bp-md) {
+    padding: 20px;
+  }
+
+  .container--title-section {
+    .title--section-video {
+      font-size: 48px;
+      font-weight: 700;
+      color: #201F1E;
+      line-height: 48px;
+      text-transform: initial;
+    }
+  }
+
+  .container--image-video {
+    max-width: 1200px;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    height: 550px;
+
+    .container--play-btn {
+      background: var(--c-body-bg);
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 48%;
+      transform: translate(-50%, -50%);
+      padding: 25px;
+      z-index: 3;
+      cursor: pointer;
+      transition: var(--g-trans);
+
+      @include m_query($bp-md) {
+        width: 60px;
+        height: 60px;
+        padding: 20px;
+        left: 50%;
+      }
+
+      svg {
+        transition: var(--g-trans);
+        color: var(--c-aqua);
+      }
+
+      &:hover {
+        background-color: var(--c-aqua);
+
+        svg {
+          color: var(--c-body-bg);
+        }
+      }
+    }
+
+    .pause-btn {
+      display: none;
+    }
+
+    @include m_query($bp-md) {
+      height: 350px;
+    }
+
+    @include m_query($bp-sm) {
+      height: 300px;
+    }
+
+    // &::after {
+    //   content: '';
+    //   width: 100%;
+    //   height: 100%;
+    //   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 54.4%, #FFFFFF 95.34%);
+    //   position: absolute;
+    //   left: 0;
+    //   bottom: 0;
+    // }
+  }
+
+
+  &-src {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+video,
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.video-loader-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid var(--c-aqua);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.container--image-video {
+  position: relative;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

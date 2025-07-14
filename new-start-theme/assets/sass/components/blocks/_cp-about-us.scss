@@ -1,0 +1,115 @@
+.container--about-us,
+.container--headings-development {
+
+  p {
+    margin: 0;
+  }
+
+  .container--wrapper {
+    padding-block: 80px 60px;
+
+    @include m_query($bp-lg) {
+      padding-block: 60px 50px;
+    }
+
+    @include m_query($bp-md) {
+      padding-block: 50px 40px;
+    }
+
+    @include m_query($bp-sm) {
+      padding-block: 40px;
+    }
+
+    .container--cta-titles {
+
+      .subtitle--section {
+        font-family: $font__secondary;
+        font-weight: 500;
+        font-size: 18px;
+        color: var(--c-aqua-2);
+        padding-block-end: 11px;
+        text-transform: uppercase;
+        display: block;
+      }
+
+      .cta--title {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+          gap: 15px;
+          justify-content: start;
+          align-items: start;
+        }
+
+        .title--section {
+          font-family: $font__main;
+          font-weight: 700;
+          font-size: 48px;
+          color: var(--c-black);
+          max-width: 100%;
+          text-transform: inherit;
+
+          @include m_query(1024px) {
+            flex: 1;
+          }
+
+          @include m_query($bp-md) {
+            font-size: 36px;
+          }
+
+          @include m_query($bp-sm) {
+            font-size: 32px;
+          }
+        }
+
+
+        .first--cta {
+          border: 1px solid var(--c-black);
+          border-radius: 4px;
+          padding: 12px 24px;
+          color: var(--c-black);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: $font__secondary;
+          font-weight: 400;
+          font-size: 16px;
+          text-transform: uppercase;
+          transition: var(--g-trans);
+
+          &:hover {
+            border: 1px solid var(--c-aqua);
+            background-color: var(--c-aqua);
+            color: var(--c-body-bg);
+          }
+
+        }
+
+      }
+
+
+    }
+
+    .container--description {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      * {
+        font-family: $font__secondary;
+        font-weight: 400;
+        font-size: 20px;
+        color: #777472;
+        text-align: justify;
+
+        @include m_query($bp-sm) {
+          font-size: 18px;
+          line-height: 26px;
+        }
+      }
+    }
+  }
+}

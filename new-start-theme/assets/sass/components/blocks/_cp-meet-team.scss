@@ -1,0 +1,138 @@
+.container--meet-team {
+  background: linear-gradient(180deg, #D4E6E1 0%, #E0ECE9 100%);
+
+  img {
+    max-width: unset;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .container--wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include m_query(1024px) {
+      padding-block: 40px !important;
+    }
+
+
+    .container--image-person {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+
+      @media (max-width: 1024px) {
+        img {
+          width: 100%;
+        }
+      }
+
+    }
+
+    .container--info-section {
+      width: 50%;
+
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
+
+      .container--info {
+        background-color: var(--c-body-bg);
+        border-radius: 12px;
+        width: 505px;
+        height: 420px;
+        padding: 24px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width: 1024px) {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .subtitle--meet-team {
+        font-family: $font__secondary;
+        font-weight: 500;
+        font-size: 18px;
+        color: var(--c-aqua-2);
+        padding-block-end: 11px;
+        text-transform: uppercase;
+        display: block;
+      }
+
+      .title--meet-team {
+        font-family: $font__secondary;
+        font-weight: 700;
+        font-size: 48px;
+        color: var(--c-black);
+        padding-block-end: 20px;
+
+        @include m_query(1024px) {
+          font-size: 42px;
+        }
+
+        @include m_query($bp-md) {
+          font-size: 36px;
+        }
+
+        @include m_query($bp-sm) {
+          font-size: 32px;
+        }
+      }
+
+
+      .container--description-team {
+        padding-block-end: 20px;
+
+        * {
+          font-family: $font__secondary;
+          font-weight: 400;
+          font-size: 20px;
+          color: #413F3E;
+
+          @include m_query($bp-sm) {
+            font-size: 18px;
+            line-height: 26px;
+          }
+        }
+      }
+
+      .cta--meet-team {
+        border: 1px solid var(--c-black);
+        border-radius: 4px;
+        padding: 12px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        color: var(--c-black);
+        max-width: 275px;
+        font-family: $font__secondary;
+        font-size: 16px;
+        font-weight: 400;
+        transition: var(--g-trans);
+
+        &:hover {
+          border: 1px solid var(--c-aqua);
+          background-color: var(--c-aqua);
+          color: var(--c-body-bg);
+        }
+      }
+
+    }
+
+  }
+
+}

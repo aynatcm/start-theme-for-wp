@@ -1,0 +1,123 @@
+.container--testimonial {
+
+  background-image: linear-gradient(360deg, #EEF0F2 50%, #FFFFFF 100%);
+
+
+  padding-block: 40px;
+
+  .container--wrapper {
+
+    .container--titles-testimonial {
+      padding-block-end: 40px;
+
+      @include m_query(1024px) {
+        padding-block-end: 0;
+      }
+
+      .testimonial--subtitle {
+        font-family: $font__main;
+        font-weight: 500;
+        font-size: 18px;
+        text-align: center;
+        padding-block-end: 11px;
+        color: var(--c-aqua);
+        text-transform: uppercase;
+        display: block;
+      }
+
+      .testimonial--title {
+        font-family: $font__main;
+        font-weight: 700;
+        font-size: 48px;
+        text-align: center;
+        color: var(--c-primary);
+
+        @media (max-width: 768px) {
+          font-size: 34px;
+        }
+
+        @include m_query($bp-sm) {
+          font-size: 28px;
+        }
+      }
+
+    }
+
+    .container--testimonial-item {
+      .testimonial--item {
+        background-color: white;
+        border-radius: 12px;
+        padding: 20px 24px;
+        box-shadow: 0 7px 29px 0 hsla(240, 5%, 41%, .2);
+
+        .review--logo {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          object-fit: cover;
+          padding-block-end: 20px;
+        }
+
+        .testimonial--review {
+          font-family: $font__main;
+          font-size: 16px;
+          text-align: left;
+          font-weight: 400;
+          color: #424242;
+          padding-block-end: 20px;
+          margin: 0;
+
+          * {
+            font-family: $font__main;
+            font-size: 16px;
+            text-align: left;
+            font-weight: 400;
+            color: #424242;
+            padding-block-end: 20px;
+            margin: 0;
+          }
+        }
+
+        .testimonial--info-user {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 20px;
+
+          .user--image {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            object-fit: cover;
+
+          }
+
+          .user--info {
+            .user--name {
+              font-family: $font__main;
+              font-weight: 600;
+              font-size: 18px;
+              color: black;
+              display: block;
+            }
+
+            .user--position {
+              font-family: $font__main;
+              font-weight: 200;
+              font-size: 14px;
+              color: black;
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+
+  .swiper-wrapper {
+    padding-block: 40px;
+    box-sizing: border-box;
+  }
+
+}

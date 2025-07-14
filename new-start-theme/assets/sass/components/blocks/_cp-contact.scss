@@ -1,0 +1,330 @@
+.container--contact {
+  padding-block: 100px;
+  background-color: #EEF0F2;
+
+  @include m_query(1024px) {
+    padding-block: 80px;
+  }
+
+  @include m_query($bp-md) {
+    padding-block: 60px;
+  }
+
+  @include m_query($bp-sm) {
+    padding-block: 40px;
+  }
+
+  .container--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+
+    @include m_query(1024px) {
+      gap: 30px;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .container--info-contact {
+      width: 40%;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+
+      .title--contact {
+        font-family: $font__main;
+        font-weight: 700;
+        font-size: 48px;
+        color: var(--c-primary);
+        padding-block-end: 30px;
+
+        @include m_query(1024px) {
+          font-size: 34px;
+          padding-block-end: 20px;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 28px;
+        }
+      }
+
+      .description--contact {
+        font-family: $font__main;
+        font-weight: 400;
+        font-size: 20px;
+        color: #777472;
+        margin: 0;
+        padding-block-end: 30px;
+
+        @include m_query(1024px) {
+          font-size: 18px;
+          padding-block-end: 20px;
+        }
+
+        @include m_query($bp-sm) {
+          font-size: 16px;
+        }
+      }
+
+      .container--icons-media {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 28px;
+        padding-block-end: 40px;
+        border-bottom: 1px solid #777472;
+
+        @include m_query(1024px) {
+          gap: 10px;
+        }
+
+        .icons--media-contact {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 10px;
+
+          .icon--contact {
+            background-color: black;
+            border-radius: 50%;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include m_query(1024px) {
+              padding: 8px;
+            }
+
+            .image--contact {
+              width: 20px;
+              height: 20px;
+              object-fit: cover;
+
+              @include m_query(1024px) {
+                width: 14px;
+                height: 14px;
+              }
+            }
+          }
+
+          .text--contact {
+            a {
+              flex: 1;
+              font-family: $font__main;
+              font-weight: 400;
+              font-size: 24px;
+              color: #777472;
+
+              @include m_query(1024px) {
+                font-size: 18px;
+              }
+
+              @media (max-width: 768px) {
+                width: 80%;
+              }
+
+              @include m_query($bp-sm) {
+                font-size: 16px;
+              }
+            }
+          }
+
+        }
+      }
+
+      .container--social-media {
+        padding-block-start: 20px;
+
+        .title--social-media {
+          font-family: $font__main;
+          font-weight: 600;
+          font-size: 24px;
+          color: black;
+          text-align: left;
+          padding-block-end: 11px;
+
+          @include m_query($bp-md) {
+            font-size: 20px;
+          }
+        }
+
+        .social--media-icons {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 14px;
+
+          .link--social-media {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--c-aqua);
+            border-radius: 50%;
+            padding: 11px;
+            transition: var(--g-trans);
+
+            &:hover {
+              transform: scale(1.05);
+            }
+
+            @include m_query(1024px) {
+              padding: 6px;
+            }
+
+            img {
+              width: 25px;
+              height: 25px;
+              object-fit: scale-down;
+
+              @include m_query(1024px) {
+                width: 18px;
+                height: 18px;
+              }
+            }
+          }
+        }
+      }
+
+
+    }
+
+    .container--form-contact {
+      background-color: white;
+      box-shadow: 0 7px 29px 0 hsla(240, 5%, 41%, .2);
+      padding: 30px 52px;
+      border-radius: 16px;
+      width: 55%;
+
+      @include m_query(1024px) {
+        padding: 30px 40px;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+        padding: 25px;
+      }
+
+      .title--contact-form {
+        font-family: $font__main;
+        font-weight: 700;
+        font-size: 40px;
+        color: var(--c-primary);
+        text-align: left;
+        padding-block-end: 31px;
+
+        @include m_query(1024px) {
+          font-size: 36px;
+        }
+
+        @include m_query($bp-md) {
+          font-size: 28px;
+        }
+
+        @include m_query($bp-sm) {
+          font-size: 24px;
+          padding-block-end: 20px;
+        }
+      }
+
+      .container--form {
+        form {
+
+          div {
+            .nf-before-form-content {
+              display: none;
+            }
+
+
+            .nf-form-content {
+              .nf-field-container {
+                .nf-field {
+                  .nf-field-label {
+                    label {
+                      padding: 0;
+                      margin: 0;
+
+                      span {
+                        display: none;
+                      }
+                    }
+                  }
+
+                  .nf-field-element {
+                    input {
+                      width: 100%;
+                      border: 1px solid #cac9c8;
+                      border-radius: 8px;
+                      padding-inline: 20px;
+                      padding-block: 12px;
+                    }
+
+                    textarea {
+                      border-radius: 8px;
+                      resize: none;
+                      padding-inline: 20px;
+                      padding-block: 12px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          label {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 10px;
+            padding-block-end: 10px;
+
+            input {
+              width: 100%;
+              border: 1px solid #CAC9C8;
+              border-radius: 8px;
+              padding-inline: 20px;
+              padding-block: 12px;
+            }
+
+            textarea {
+              border-radius: 8px;
+              resize: none;
+              padding-inline: 20px;
+              padding-block: 12px;
+            }
+
+          }
+
+          input[type="submit"] {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 0 13px;
+            width: 300px;
+            height: 52px;
+            text-transform: uppercase;
+            font-family: $font__main;
+            font-weight: 400;
+            font-size: 16px;
+            border-radius: 4px;
+
+            @include m_query($bp-md) {
+              width: fit-content;
+              padding: 10px 40px;
+            }
+
+          }
+        }
+      }
+    }
+
+  }
+
+}

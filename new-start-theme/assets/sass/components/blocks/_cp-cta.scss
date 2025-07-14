@@ -1,0 +1,122 @@
+.cta {
+    width: 100%;
+    padding: 40px;
+    margin-top: 60px;
+
+    @include m_query($bp-md) {
+        padding: 0;
+    }
+
+    &__wrapper {
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        height: auto;
+        align-items: center;
+
+        @include m_query($bp-md) {
+            flex-wrap: wrap;
+            row-gap: 40px;
+        }
+
+        .info,
+        .image {
+            flex: 1;
+
+            @include m_query($bp-md) {
+                flex: auto;
+                width: 100vw;
+            }
+        }
+
+        .info {
+
+            .title,
+            .subtitle,
+            .cta-buttons {
+                max-width: 90%;
+
+                @include m_query($bp-md) {
+                    max-width: 100%;
+                }
+            }
+
+            .title {
+                font-size: var(--fs-4);
+                font-weight: 700;
+                color: var(--c-primary);
+                line-height: normal;
+
+                @include m_query($bp-md) {
+                    font-size: 27px;
+                }
+            }
+
+            .subtitle {
+                font-size: var(--fs-base);
+                font-weight: 400;
+                color: var(--c-primary-hover);
+                margin-top: 20px;
+
+                @include m_query($bp-md) {
+                    margin-top: 10px;
+                }
+            }
+
+            .cta-buttons {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                margin-top: 25px;
+
+                a {
+                    flex: 1;
+                    padding: 15px 20px;
+                    font-size: var(--fs-base);
+                    font-weight: 400;
+                    text-align: center;
+                    color: var(--c-primary);
+                }
+
+                .first_cta {
+                    background-color: var(--c-primary);
+                    color: var(--c-body-bg);
+                    transition: var(--g-trans);
+
+                    &:hover {
+                        background-color: var(--c-primary-hover);
+                    }
+                }
+
+                .second_cta {
+                    background-color: inherit;
+                    border: 1px solid var(--c-primary);
+
+                    &:hover {
+                        border: 1px solid var(--c-second);
+                        color: var(--c-second);
+                    }
+                }
+            }
+
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 90%;
+                height: auto;
+
+                @include m_query($bp-md) {
+                    width: 100%;
+                    height: 250px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

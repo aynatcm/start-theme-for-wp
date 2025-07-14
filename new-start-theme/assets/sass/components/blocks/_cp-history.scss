@@ -1,0 +1,102 @@
+.container--history {
+  padding-block: 40px 20px;
+
+  .container--wrapper {
+
+    .container--titles-history {
+
+      .subtitle--history {
+        font-family: $font__main;
+        font-weight: 500;
+        font-size: 18px;
+        text-align: left;
+        color: var(--c-aqua);
+        padding-block-end: 2px;
+        text-transform: uppercase;
+      }
+
+      .title--history {
+        font-family: $font__main;
+        font-weight: 700;
+        font-size: 48px;
+        text-align: left;
+        color: var(--c-primary);
+        padding-block-end: 20px;
+        text-transform: initial;
+
+        @media (max-width: 768px) {
+          font-size: 28px;
+        }
+      }
+
+      border-bottom: 1px solid #777472;
+    }
+
+    .container--description-history {
+      padding-block-start: 40px;
+      padding-block-end: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+
+      @include m_query($bp-md) {
+        flex-direction: column;
+        padding-block-start: 20px;
+        gap: 10px;
+      }
+
+      .first--description-history {
+        font-family: $font__main;
+        color: #777472;
+        margin: 0;
+        padding: 0;
+        text-align: justify;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        * {
+          font-family: $font__main;
+          color: #777472;
+          margin: 0;
+          padding: 0;
+          text-align: justify;
+          font-size: 16px;
+        }
+      }
+
+      .second--description-history {
+        font-family: $font__main;
+        color: #777472;
+        margin: 0;
+        padding: 0;
+        text-align: justify;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        * {
+          font-family: $font__main;
+          color: #777472;
+          margin: 0;
+          padding: 0;
+          text-align: justify;
+          font-size: 16px;
+
+        }
+      }
+    }
+
+    .container--image-history {
+      .image--history {
+        width: 100%;
+        max-width: unset;
+        border-radius: 14px;
+      }
+    }
+
+  }
+}

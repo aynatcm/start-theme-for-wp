@@ -1,0 +1,589 @@
+/*————————————————————————————————————————————————————*\
+    ●❱ UTILITIES
+\*————————————————————————————————————————————————————*/
+
+.position-relative {
+    position: relative !important;
+}
+
+.position-static {
+    position: static !important;
+}
+
+/*  |> ALIGN ELEMENTS WITH FLEX
+——————————————————————————————————————————————————————*/
+
+.cent-xy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cent-x {
+    display: flex;
+    justify-content: center;
+}
+
+.cent-y {
+    display: flex;
+    align-items: center;
+}
+
+/*  |> ACCESIBILITY
+——————————————————————————————————————————————————————*/
+
+// *:focus,
+// *:focus-visible {
+//     outline: none;
+// }
+
+.js-focus-visible :focus:not(.focus-visible) {
+    outline: none;
+}
+
+.js-focus-visible .focus-visible {
+    outline: 2px solid #e15c59 !important;
+}
+
+.js-focus-visible .focus-visible.btn-link {
+    display: inline;
+}
+
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+    @include visually-hidden;
+}
+
+.stretched-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.skip-link {
+    background: gray;
+    padding: 0.8rem;
+    width: 100%;
+    display: block;
+    text-align: center;
+    color: black;
+    font-size: 1.3rem;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+
+    &:focus-within,
+    &:focus {
+        color: white;
+        background: black;
+        font-weight: 700;
+        text-decoration-color: white;
+    }
+}
+
+.sr-tooltip-text {
+    &:not(:focus-visible):not(:focus):not(:hover) {
+        .sr-tooltip-text--item {
+            @include visually-hidden;
+        }
+    }
+
+    .sr-tooltip-text--item {
+        position: absolute;
+        width: max-content;
+        transform: translateX(-50%);
+        font-size: 14px;
+        text-align: left;
+        background: black;
+        padding: 0.4rem;
+        border-radius: 5px;
+        bottom: -1.5rem;
+        left: 50%;
+    }
+}
+
+/*————————————————————————————————————————————————————*\
+    ●❱ SPACING UTILITIES
+\*————————————————————————————————————————————————————*/
+
+@if $enabled_spacing_utilities {
+
+    .my-32 {
+        margin-top: var(--sp-32) !important;
+        margin-bottom: var(--sp-32) !important;
+    }
+
+    .my-40 {
+        margin-top: var(--sp-40) !important;
+        margin-bottom: var(--sp-40) !important;
+    }
+
+    .my-64 {
+        margin-top: var(--sp-64) !important;
+        margin-bottom: var(--sp-64) !important;
+    }
+
+    .my-80 {
+        margin-top: var(--sp-80) !important;
+        margin-bottom: var(--sp-80) !important;
+    }
+
+    .my-120 {
+        margin-top: var(--sp-120) !important;
+        margin-bottom: var(--sp-120) !important;
+    }
+
+    .my-160 {
+        margin-top: var(--sp-160) !important;
+        margin-bottom: var(--sp-160) !important;
+    }
+
+    .my-auto {
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+    }
+
+    .mt-32 {
+        margin-top: var(--sp-32) !important;
+    }
+
+
+    .mt-40 {
+        margin-top: var(--sp-40) !important;
+    }
+
+    .mt-64 {
+        margin-top: var(--sp-64) !important;
+    }
+
+    .mt-80 {
+        margin-top: var(--sp-80) !important;
+    }
+
+    .mt-120 {
+        margin-top: var(--sp-120) !important;
+    }
+
+    .mt-160 {
+        margin-top: var(--sp-160) !important;
+    }
+
+    .mt-auto {
+        margin-top: auto !important;
+    }
+
+    .mb-32 {
+        margin-bottom: var(--sp-32) !important;
+    }
+
+    .mb-40 {
+        margin-bottom: var(--sp-40) !important;
+    }
+
+    .mb-64 {
+        margin-bottom: var(--sp-64) !important;
+    }
+
+    .mb-80 {
+        margin-bottom: var(--sp-80) !important;
+    }
+
+    .mb-120 {
+        margin-bottom: var(--sp-120) !important;
+    }
+
+    .mb-160 {
+        margin-bottom: var(--sp-160) !important;
+    }
+
+    .mb-auto {
+        margin-bottom: auto !important;
+    }
+
+    .py-32 {
+        padding-top: var(--sp-32) !important;
+        padding-bottom: var(--sp-32) !important;
+    }
+
+    .py-40 {
+        padding-top: var(--sp-40) !important;
+        padding-bottom: var(--sp-40) !important;
+    }
+
+    .py-64 {
+        padding-top: var(--sp-64) !important;
+        padding-bottom: var(--sp-64) !important;
+    }
+
+    .py-80 {
+        padding-top: var(--sp-80) !important;
+        padding-bottom: var(--sp-80) !important;
+    }
+
+    .py-120 {
+        padding-top: var(--sp-120) !important;
+        padding-bottom: var(--sp-120) !important;
+    }
+
+    .py-160 {
+        padding-top: var(--sp-160) !important;
+        padding-bottom: var(--sp-160) !important;
+    }
+
+    .pt-32 {
+        padding-top: var(--sp-32) !important;
+    }
+
+    .pt-40 {
+        padding-top: var(--sp-40) !important;
+    }
+
+    .pt-64 {
+        padding-top: var(--sp-64) !important;
+    }
+
+    .pt-80 {
+        padding-top: var(--sp-80) !important;
+    }
+
+    .pt-120 {
+        padding-top: var(--sp-120) !important;
+    }
+
+    .pt-160 {
+        padding-top: var(--sp-160) !important;
+    }
+
+    .pb-32 {
+        padding-bottom: var(--sp-32) !important;
+    }
+
+    .pb-40 {
+        padding-bottom: var(--sp-40) !important;
+    }
+
+    .pb-64 {
+        padding-bottom: var(--sp-64) !important;
+    }
+
+    .pb-80 {
+        padding-bottom: var(--sp-80) !important;
+    }
+
+    .pb-120 {
+        padding-bottom: var(--sp-120) !important;
+    }
+
+    .pb-160 {
+        padding-bottom: var(--sp-160) !important;
+    }
+}
+
+/*————————————————————————————————————————————————————*\
+    ●❱ DISPLAY
+\*————————————————————————————————————————————————————*/
+
+.d-block {
+    display: block !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+
+@include m_query($bp-sm, 'min') {
+    .d-sm-block {
+        display: block !important;
+    }
+
+    .d-sm-flex {
+        display: flex !important;
+    }
+
+    .d-sm-none {
+        display: none !important;
+    }
+}
+
+@include m_query($bp-md, 'min') {
+    .d-md-block {
+        display: block !important;
+    }
+
+    .d-md-flex {
+        display: flex !important;
+    }
+
+    .d-md-none {
+        display: none !important;
+    }
+}
+
+@include m_query($bp-lg, 'min') {
+    .d-lg-block {
+        display: block !important;
+    }
+
+    .d-lg-flex {
+        display: flex !important;
+    }
+
+    .d-lg-none {
+        display: none !important;
+    }
+}
+
+@include m_query($bp-xl, 'min') {
+    .d-xl-block {
+        display: block !important;
+    }
+
+    .d-xl-flex {
+        display: flex !important;
+    }
+
+    .d-xl-none {
+        display: none !important;
+    }
+}
+
+@include m_query($bp-xxl) {
+    .d-xxl-block {
+        display: block !important;
+    }
+
+    .d-xxl-flex {
+        display: flex !important;
+    }
+
+    .d-xxl-none {
+        display: none !important;
+    }
+}
+
+
+/*————————————————————————————————————————————————————*\
+    ●❱ Trim text classes
+\*————————————————————————————————————————————————————*/
+$line-sizes: 1,
+2,
+3,
+4,
+5;
+
+[class*='trim-text'] {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@each $size in $line-sizes {
+    .trim-text-#{$size} {
+        -webkit-line-clamp: $size;
+    }
+
+    .card__title.trim-text-#{$size},
+    .card__title.trim-text-#{$size} {
+        overflow: initial;
+        text-overflow: initial;
+        -webkit-box-orient: initial;
+        display: initial;
+
+        a {
+            -webkit-line-clamp: $size;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+/*————————————————————————————————————————————————————*\
+    ●❱ Height classes
+\*————————————————————————————————————————————————————*/
+
+$height-sizes: 140,
+180,
+200,
+340,
+400;
+// $height-sizes: 140, 180, 200, 340, 400;
+
+:root {
+    @for $i from 1 through length($height-sizes) {
+        --height-#{$i}: #{nth($height-sizes, $i) + px};
+    }
+}
+
+@for $i from 1 through length($height-sizes) {
+    .height-#{$i} {
+        height: var(--height-#{$i});
+    }
+}
+
+/*————————————————————————————————————————————————————*\
+    ●❱ Font sizes classes
+\*————————————————————————————————————————————————————*/
+
+
+@for $i from 1 through 7 {
+    .fs-#{$i} {
+        font-size: var(--fs-#{$i});
+    }
+}
+
+
+/*————————————————————————————————————————————————————*\
+    ●❱ Utilities for layout
+\*————————————————————————————————————————————————————*/
+
+// .sp-el-x {
+//     >*+* {
+//         position: relative;
+
+//         &::before {
+//             --size: 100%;
+//             content: '';
+//             position: absolute;
+//             top: 50%;
+//             left: 0;
+//             width: 1px;
+//             height: var(--size);
+//             transform: translateY(-50%);
+//             background: var(--c-bk-5);
+//         }
+//     }
+// }
+
+
+// .sp-el-y {
+//     >*+* {
+//         position: relative;
+//         margin-top: var(--gap) !important;
+
+//         &::before {
+//             --size: 100%;
+//             content: '';
+//             position: absolute;
+//             top: calc((var(--gap) / 2) * -1);
+//             left: 0;
+//             width: var(--size);
+//             height: 1px;
+//             background: var(--c-bk-5);
+//         }
+//     }
+
+//     >.row+.row {
+//         &::before {
+//             --size: calc(100% - 1.5rem);
+//             left: .75rem;
+//         }
+//     }
+// }
+
+.sp-el-y {
+    >*+* {
+        margin-top: var(--sp-32);
+    }
+}
+
+.sp-el-y-20 {
+    >*+* {
+        margin-top: 1.25rem;
+    }
+}
+
+.pb-g-20 {
+    padding-bottom: 1.25rem !important;
+}
+
+.pb-g-40 {
+    padding-bottom: var(--gap) !important;
+}
+
+.mb-g-20 {
+    margin-bottom: 1.25rem !important;
+}
+
+.mt-g-20 {
+    margin-top: 1.25rem !important;
+}
+
+.mb-g-40 {
+    margin-bottom: var(--gap) !important;
+}
+
+// .mb-gap-40 {
+//   margin-bottom: calc(var(--gap) / 2) !important;
+//   padding-bottom: calc(var(--gap) / 2) !important;
+
+// }
+
+.border-b {
+    border-bottom: 1px solid var(--c-bk-5);
+}
+
+.border-g-b {
+    position: relative;
+
+    &::after {
+        --size: calc(100% - var(--gap));
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: calc(var(--gap) / 2);
+        width: var(--size);
+        height: 1px;
+        background: var(--c-bk-5);
+    }
+}
+
+.border-b-ft {
+    position: relative;
+
+    &::after {
+        --size: calc(100% - 1.5rem);
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: calc(1.5rem / 2);
+        width: var(--size);
+        height: 4px;
+        background: black;
+    }
+}
+
+/*————————————————————————————————————————————————————*\
+    ●❱ Object position
+\*————————————————————————————————————————————————————*/
+
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1)+$replace+str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+$position-values: 'top-left', 'top', 'top-right', 'left', 'right', 'bottom-left', 'bottom', 'bottom-right';
+
+@each $position in $position-values {
+    $position-no-quotes: str-replace($position, "'", ''); // Elimina comillas
+    $position-with-spaces: str-replace($position-no-quotes, '-', ' '); // Reemplaza guiones con espacios
+    .img-position-#{$position-no-quotes} {
+        object-position: #{$position-with-spaces};
+    }
+}

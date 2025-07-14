@@ -1,0 +1,260 @@
+.container--info-place {
+  padding-block: 40px;
+
+  .container--wrapper {
+    .title--button-place {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      @media (max-width: 1024px) {
+        gap: 20px;
+      }
+
+      .title--place {
+        font-family: $font__secondary;
+        font-weight: 700;
+        font-size: 48px;
+        text-align: left;
+        color: var(--c-black);
+
+        @include m_query(1024px) {
+          font-size: 36px;
+        }
+
+        @include m_query($bp-md) {
+          font-size: 32px;
+        }
+
+        @include m_query($bp-sm) {
+          font-size: 28px;
+        }
+      }
+
+      .name--location {
+        font-family: $font__secondary;
+        font-weight: 400;
+        font-size: 20px;
+        text-align: left;
+        color: var(--c-black);
+
+        @include m_query(1024px) {
+          font-size: 36px;
+        }
+
+        @include m_query($bp-md) {
+          font-size: 32px;
+        }
+
+        @include m_query($bp-sm) {
+          font-size: 28px;
+        }
+      }
+
+      .link--place {
+        background-color: var(--c-black);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 4px;
+        color: white;
+        font-family: $font__secondary;
+        font-weight: 600;
+        font-size: 20px;
+        padding: 26px 28px;
+        width: fit-content;
+        gap: 90px;
+        transition: var(--g-trans);
+
+        @include m_query(1024px) {
+          gap: 60px;
+        }
+
+        @include m_query($bp-md) {
+          gap: 40px;
+          font-size: 18px;
+        }
+
+        @include m_query($bp-sm) {
+          font-size: 16px;
+          gap: 30px;
+        }
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        svg {
+          fill: white;
+        }
+
+        &.light-white {
+          background-color: #EEF0F2;
+          color: var(--c-black);
+
+          svg {
+            fill: var(--c-black);
+          }
+        }
+
+        @media (max-width: 1024px) {
+          padding: 12px;
+        }
+      }
+    }
+
+    hr {
+      margin-block: 20px;
+      background-color: #CAC9C8;
+    }
+
+    .description--video-place {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+      flex-wrap: wrap;
+
+      @include m_query(1024px) {
+        gap: 40px;
+      }
+
+      @include m_query($bp-md) {
+        gap: 30px;
+      }
+
+      @include m_query($bp-sm) {
+        gap: 20px;
+      }
+
+      .description--place {
+        font-family: $font__secondary;
+        font-weight: 400;
+        font-size: 24px;
+        color: var(--c-black);
+        margin: 0;
+        width: 40%;
+
+        @media (max-width: 1440px) {
+          width: 35%;
+        }
+
+        @media (max-width: 1024px) {
+          width: 100%;
+          font-size: 20px;
+        }
+
+        @include m_query($bp-md) {
+          font-size: 18px;
+        }
+
+        @include m_query($bp-sm) {
+          font-size: 16px;
+        }
+
+        * {
+          font-family: $font__secondary;
+          font-size: 24px;
+          color: var(--c-black);
+          margin: 0;
+
+          @media (max-width: 1024px) {
+            font-size: 20px;
+          }
+
+          @include m_query($bp-md) {
+            font-size: 18px;
+          }
+
+          @include m_query($bp-sm) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .video--place {
+        width: 55%;
+
+        @media (max-width: 1440px) {
+          width: 50%;
+        }
+
+        @media (max-width: 1024px) {
+          width: 100%;
+        }
+
+        .video--wrapper {
+          position: relative;
+          width: 100%;
+          height: 415px;
+
+          @include m_query($bp-md) {
+            height: 300px;
+          }
+
+          @include m_query($bp-sm) {
+            height: 250px;
+          }
+
+          .video--thumbnail {
+            width: 100%;
+            height: 100%;
+            display: block;
+            cursor: pointer;
+            border-radius: 12px;
+          }
+
+          .play--button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include m_query($bp-lg) {
+              width: 80px;
+              height: 80px;
+              padding: 30px;
+            }
+
+            @include m_query($bp-md) {
+              width: 60px;
+              height: 60px;
+              padding: 20px;
+            }
+          }
+
+          .video--element {
+            width: 100%;
+            height: 415px;
+            object-fit: cover;
+            display: none;
+            border-radius: 12px;
+
+            @include m_query($bp-md) {
+              height: 300px;
+            }
+
+            @include m_query($bp-sm) {
+              height: 250px;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

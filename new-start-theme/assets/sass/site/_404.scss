@@ -1,0 +1,63 @@
+.error-404 {
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  .page-title {
+    font-family: $font__main;
+    font-size: 4.5rem;
+    text-align: center;
+    font-weight: 700;
+    color: var(--c-black);
+    padding-block-end: 10px;
+
+    @media (max-width: 768px) {
+      font-size: 3rem;
+    }
+
+  }
+
+  .page-content {
+    .description-error {
+      font-family: $font__secondary;
+      font-size: 1.5rem;
+      color: var(--c-gray);
+      text-align: justify;
+      font-weight: 400;
+      padding-block-end: 15px;
+    }
+
+    form {
+      div {
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+
+        input[type="text"] {
+          width: 100%;
+          border-radius: 8px;
+          border: 1px solid #CAC9C8;
+          padding: 8px 12px;
+          height: 60px;
+        }
+
+        input[type="submit"] {
+          background-color: black;
+          color: white;
+          padding: 12px 24px;
+          font-family: $font__secondary;
+          font-size: 16px;
+          text-align: center;
+          border-radius: 4px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

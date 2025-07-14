@@ -1,0 +1,67 @@
+/*————————————————————————————————————————————————————*\
+    ●❱ BASIC GRID - By Bootstrap
+\*————————————————————————————————————————————————————*/
+
+
+.container,
+.container-fluid {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  max-width: var(--max-width-container, 1440px)
+}
+
+.row {
+  --bs-gutter-x: var(--sp-40);
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+
+.row>* {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
+}
+
+/*  |> GUTTERS
+——————————————————————————————————————————————————————*/
+
+.g-0,
+.gx-0 {
+  --bs-gutter-x: 0;
+}
+
+.g-0,
+.gy-0 {
+  --bs-gutter-y: 0;
+}
+
+.g-32 {
+  --bs-gutter-y: 2rem;
+  --bs-gutter-x: 2rem;
+}
+
+.gy-32 {
+  --bs-gutter-y: var(--sp-32);
+}
+
+.gy-40 {
+  --bs-gutter-y: var(--sp-40);
+}
+
+.gy-24 {
+  --bs-gutter-y: 1.5rem;
+}

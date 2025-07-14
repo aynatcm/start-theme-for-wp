@@ -1,0 +1,259 @@
+#app-calculator {
+  #start-calculator {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .container--inputs-calculator {
+      width: 50%;
+      border-right: 1px solid black;
+      padding-inline-end: 20px;
+
+      .title--input-calculator {
+        font-family: $font__secondary;
+        font-weight: 700;
+        font-size: 30px;
+        color: var(--c-black);
+        text-align: left;
+        padding-block-end: 10px;
+      }
+
+      .subtitle--input-calculator {
+        font-family: $font__secondary;
+        font-weight: 400;
+        font-size: 22px;
+        color: var(--c-black);
+        text-align: left;
+        padding-block-end: 5px;
+        display: block;
+      }
+
+      .container--inputs {
+        .container--information-house,
+        .container--down-payment,
+        .container--annual-interest,
+        .container--loan-term {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding: 10px;
+
+          label {
+            font-family: $font__secondary;
+            font-weight: 600;
+            font-size: 18px;
+            color: #777472;
+            padding-block-end: 10px;
+            display: block;
+            width: 100%;
+            text-align: left;
+          }
+
+          span {
+            font-family: $font__secondary;
+            font-weight: 700;
+            font-size: 21px;
+            color: #777472;
+            padding-block-start: 5px;
+            width: 100%;
+            display: block;
+            text-align: right;
+          }
+
+          input[type="number"] {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #CAC9C8;
+            padding: 10px 20px;
+          }
+        }
+      }
+    }
+
+    .container--estimated-payments {
+      width: 50%;
+      padding: 20px;
+
+      .title--estimated-payments {
+        font-family: $font__secondary;
+        font-weight: 500;
+        font-size: 24px;
+        color: var(--c-aqua);
+        padding-block-end: 20px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .container--payment-details {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .payment-table {
+          width: 100%;
+          border-collapse: collapse;
+          font-family: $font__secondary;
+          font-size: 18px;
+          color: var(--c-black);
+          background-color: #fff;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+          margin: 0 0 5px;
+
+          thead {
+            background-color: #f9f9f9;
+
+            th {
+              text-align: left;
+              padding: 1rem;
+              font-weight: 700;
+              font-size: 18px;
+              border-bottom: 2px solid #ccc;
+            }
+          }
+
+          tbody {
+            td {
+              padding: 0.75rem 1rem;
+              border-bottom: 1px solid #e0e0e0;
+
+              &:first-child {
+                text-align: left;
+                width: 70%;
+              }
+
+              &:last-child {
+                text-align: right;
+                width: 30%;
+                font-weight: 600;
+              }
+            }
+          }
+
+          @media (max-width: 768px) {
+            font-size: 15px;
+
+            thead {
+              display: none;
+            }
+
+            tbody {
+              tr {
+                display: block;
+                margin-bottom: 1.2rem;
+              }
+
+              td {
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: 0.5rem 0;
+                border: none;
+                border-bottom: 1px solid #eee;
+
+                &:last-child {
+                  text-align: right;
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .container--cta-calculator {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .cta--get-started {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 13px;
+          width: 100%;
+          max-width: 400px;
+          border-radius: 8px;
+          font-family: $font__secondary;
+          font-size: 16px;
+          font-weight: 400;
+          color: var(--c-body-bg);
+          background-color: var(--c-black);
+        }
+
+        .cta--dowload-quote {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          align-items: center;
+          padding: 13px;
+          width: 100%;
+          max-width: 400px;
+          border-radius: 8px;
+          font-family: $font__secondary;
+          font-size: 16px;
+          font-weight: 400;
+          color: var(--c-black);
+          background-color: var(--c-body-bg);
+          border: 1px solid var(--c-black);
+        }
+      }
+    }
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+
+      .container--inputs-calculator,
+      .container--estimated-payments {
+        width: 100%;
+        border-right: none;
+        padding-inline-end: 0;
+      }
+    }
+
+    .form--calculator-zoho {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      max-width: 400px;
+      @media (max-width: 768px) {
+        //width: ;
+      }
+
+      input {
+        border-radius: 8px;
+        border: 1px solid var(--c-gray);
+        padding: 12px 12px;
+        color: black;
+        margin: 0;
+        resize: none;
+
+        &::placeholder {
+          color: var(--c-gray);
+          font-size: 20px;
+          font-weight: 400;
+          font-family: $font__secondary;
+        }
+      }
+
+      input[type="submit"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 13px;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 8px;
+        font-family: $font__secondary;
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--c-body-bg);
+        background-color: var(--c-black);
+      }
+    }
+  }
+}

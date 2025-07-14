@@ -1,0 +1,213 @@
+/*
+Theme Name: reliance Theme
+Author: reliance Theme
+Author URI: reliance Theme
+Description: reliance Theme
+Version: 1.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+// Minimum screen size for Interpolete: 320px;
+// Maximum screen size for Interpolete: 1440px;
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0 !important;
+  line-height: normal;
+}
+
+$max-width-container: 110rem;
+$p-container: 4rem;
+
+/*  |> BREAKPOINTS BOOSTRAP
+——————————————————————————————————————————————————————*/
+$bp-sm: 36em;
+$bp-md: 48em;
+$bp-lg: 76rem;
+$bp-xl: 80rem;
+$bp-xxl: 90rem;
+$bp-xxxl: 125rem;
+
+/*  |> OTHERS
+——————————————————————————————————————————————————————*/
+
+$enable-button-pointers: true !default;
+$enabled_spacing_utilities: true !default;
+
+$kbd-padding-y: 0.5rem;
+$kbd-padding-x: 0.5rem;
+$kbd-color: grey;
+$kbd-bg: white;
+
+:root {
+  @include rfs("--p-container", 2rem, 4rem); //Padding Container
+  --max-width-container: #{$max-width-container};
+
+  /* ——— Transition duration time */
+  --g-trans: 0.3s;
+
+  /* ——— Border radius */
+  --g-br: 10px;
+
+  /* ——— Box Shadow */
+  --g-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  /* ——— Fonts */
+  --body-font-size: 1rem;
+  --body-line-height: 1.5;
+
+  /* ——— Colors */
+  --c-primary: #231f20;
+  --c-aqua: #1BB3BC;
+  --c-aqua-2: #005F64;
+  --c-black: #201F1E;
+  --c-primary-hover: #231f20de;
+  --c-second: #7c7c7c;
+  --c-second-hover: #595959;
+  --c-body-bg: #fff;
+  --c-gray: #a5a5a5;
+  --c-gray-2: #777472;
+
+  /* ——— HR */
+  --hr-color: grey;
+  --hr-opacity: 1;
+
+  /* ——— Mark */
+  --mark-padding: 0.5rem;
+
+  /* ——— Links */
+  --link-color: var(--c-primary);
+  --link-hover-color: var(--c-primary-hover);
+
+  /* ——— Font sizes */
+  @include rfs("--fs-n1", 0.8rem, 0.9rem);
+  @include rfs("--fs-base", 1rem, 1rem);
+
+  @include rfs("--fs-0", 0.875rem, 0.938rem);
+  @include rfs("--fs-1", 1rem, 1.125rem);
+  @include rfs("--fs-2", 1.25rem, 1.5rem);
+  @include rfs("--fs-3", 1.5rem, 1.75rem);
+  @include rfs("--fs-4", 1.625rem, 2rem);
+  @include rfs("--fs-5", 2rem, 2.5rem);
+  @include rfs("--fs-6", 2rem, 3.5rem);
+  @include rfs("--fs-hero-1", 2.5rem, 4.6rem);
+  @include rfs("--fs-hero-2", 2rem, 6.25rem);
+  @include rfs("--hg-navbar", 71px, 124px);
+
+  /* ——— Spacing */
+  @include rfs("--sp-16", 1rem, 1rem); //16px
+  @include rfs("--sp-32", 1.5rem, 2rem); //32px
+  @include rfs("--sp-40", 2rem, 2.5rem); //40px
+  @include rfs("--sp-50", 2rem, 3.125rem); //50px
+  @include rfs("--sp-64", 2rem, 4rem); //64px
+  @include rfs("--sp-80", 2.5rem, 5rem); //80px
+  @include rfs("--sp-120", 2.5rem, 7.5rem); //120px
+  @include rfs("--sp-160", 2.5rem, 10rem); //160px
+
+  @include m_query(22.5rem) {
+    --p-container: 1.5rem !important;
+  }
+}
+
+.container--wrapper {
+  max-width: 1240px;
+  padding-inline: 20px;
+  margin: 0 auto;
+
+  @media (max-width: 1440px) {
+    padding-inline: 20px;
+  }
+}
+
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+
+//Animations
+
+[class*="animation--"] {
+  opacity: 0; // Por defecto invisibles
+  transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease; // Transición genérica si se necesita
+
+  &.active--animation-no {
+    opacity: 1; // Hacerlo visible si la animación no está activa
+    transform: none; // Asegurarse de que no haya transformación residual
+  }
+
+  &.is-visible {
+    opacity: 1;
+    transform: none; // Restablecer cualquier transformación
+  }
+}
+
+// Fade In
+.animation--fade_in {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+  }
+}
+
+// Slide Up
+.animation--slide_up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Slide Left
+.animation--slide_left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Slide Right
+.animation--slide_right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Zoom In
+.animation--zoom_in {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Rotate In
+.animation--rotate_in {
+  opacity: 0;
+  transform: rotate(-10deg) scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
