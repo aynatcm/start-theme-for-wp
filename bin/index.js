@@ -85,7 +85,7 @@ async function main() {
     await fs.writeFile(filePath, content)
   }
 
-  const filesToUpdate = ['style.css', 'package.json', 'webpack.common.js', 'includes/base/scripts-and-styles.php','webpack.dev.js']
+  const filesToUpdate = ['style.css', 'package.json', 'webpack/webpack.common.js', 'includes/base/scripts-and-styles.php','webpack/webpack.dev.js']
   for (const file of filesToUpdate) {
     const filePath = path.join(targetDir, file)
     if (fs.existsSync(filePath)) {
