@@ -2,7 +2,7 @@ const { merge } = require("webpack-merge");
 const commonConfig = require("./webpack.common");
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
-const host = 'new-start-theme.local'
+const host = '__SITE_DOMAIN__'
 
 module.exports = merge(commonConfig, {
   mode: 'development',
