@@ -53,5 +53,5 @@ bash
 ```
 npm run dev
 ```
-###📄 Licencia
+📄 Licencia
 GPL-2.0-or-later
