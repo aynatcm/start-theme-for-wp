@@ -36,8 +36,8 @@ $socialLinks = get_field('social_links', 'option');
                         <ul>
                             <?php foreach ($socialLinks as $links): ?>
                                 <li>
-                                    <a href="<?php echo $links['link_social_media'] ?>" target="_blank">
-                                        <img src="<?php echo $links['icon_image'] ?>" alt="icon image">
+                                    <a href="<?php echo esc_url($links['link_social_media']) ?>" target="_blank">
+                                        <img src="<?php echo esc_url($links['icon_image']) ?>" alt="icon image">
                                     </a>
                                 </li>
                             <?php endforeach; ?>
@@ -60,10 +60,10 @@ $socialLinks = get_field('social_links', 'option');
                              alt="<?php echo esc_attr($site_name); ?>" class="logo__img">
                     </a>
 
-                <?php } elseif (!is_front_page()) { ?>
-                    <a href="<?php echo home_url() ?>">
-                        <img src="https://wordpress-343942-5152635.cloudwaysapps.com/wp-content/uploads/2025/03/logo-second-color.svg"
-                             alt="logo-alternative" class="logo__img">
+                <?php } elseif (!is_front_page() && $site_logo) { ?>
+                    <a href="<?php echo esc_url(home_url()) ?>">
+                        <img src="<?php echo esc_url(wp_get_attachment_image_src($site_logo, 'full')[0]); ?>"
+                             alt="<?php echo esc_attr($site_name); ?>" class="logo__img">
                     </a>
                 <?php } else { ?>
                     <span><?php echo esc_html($site_name); ?></span>
@@ -84,8 +84,8 @@ $socialLinks = get_field('social_links', 'option');
                     <ul>
                         <?php foreach ($socialLinks as $links): ?>
                             <li>
-                                <a href="<?php echo $links['link_social_media'] ?>" target="_blank">
-                                    <img src="<?php echo $links['icon_image'] ?>" alt="icon image">
+                                <a href="<?php echo esc_url($links['link_social_media']) ?>" target="_blank">
+                                    <img src="<?php echo esc_url($links['icon_image']) ?>" alt="icon image">
                                 </a>
                             </li>
                         <?php endforeach; ?>
