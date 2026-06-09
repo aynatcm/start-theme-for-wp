@@ -12,9 +12,10 @@ add_shortcode('app_calculator', 'add_vue_calculator');
 // ruta REST para calculadora
 function acf_config_api_route()
 {
-    register_rest_route('wp/v2', '/calculator_settings', array(
-        'methods' => 'GET',
-        'callback' => 'get_acf_calculator_options',
+    register_rest_route('kronoscode/v1', '/calculator_settings', array(
+        'methods'             => 'GET',
+        'callback'            => 'get_acf_calculator_options',
+        'permission_callback' => '__return_true',
     ));
 }
 

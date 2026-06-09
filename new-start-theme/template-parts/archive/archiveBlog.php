@@ -10,7 +10,7 @@ $subtitleBlog = $infoBlog['subtitle_blog'];
             <div class="container--overlay"></div>
             <?php if(!empty($imageBlog)):?>
                 <div class="container--video-image">
-                    <img src="<?php echo $imageBlog; ?>" alt="image section" class="image--blog">
+                    <img src="<?php echo esc_url($imageBlog); ?>" alt="image section" class="image--blog">
                 </div>
             <?php endif?>
 
@@ -18,11 +18,11 @@ $subtitleBlog = $infoBlog['subtitle_blog'];
                 <div class="container--wrapper">
                     <div class="container--info-breadcrum">
                         <?php if(!empty($titleBlog)):?>
-                            <h4 class="breadcrum--title"><?php echo $titleBlog; ?></h4>
+                            <h4 class="breadcrum--title"><?php echo wp_kses_post($titleBlog); ?></h4>
                         <?php endif?>
 
                         <?php if(!empty($subtitleBlog)):?>
-                            <h5 class="breadcrum--subtitle"><?php echo $subtitleBlog ?></h5>
+                            <h5 class="breadcrum--subtitle"><?php echo wp_kses_post($subtitleBlog) ?></h5>
                         <?php endif?>
                     </div>
                 </div>

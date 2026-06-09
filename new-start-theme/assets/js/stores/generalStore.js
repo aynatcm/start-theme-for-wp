@@ -16,7 +16,7 @@ export const generalStore = defineStore('generalStore', () => {
         isLoading.value = true;
         isDataLoaded.value = false;
         try {
-            const res = await fetch('/wp-json/wp/v2/calculator_settings');
+            const res = await fetch('/wp-json/kronoscode/v1/calculator_settings');
             if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
 
             const result = await res.json();
@@ -31,7 +31,7 @@ export const generalStore = defineStore('generalStore', () => {
             isDataLoaded.value = true;
 
         } catch (error) {
-            console.log('Error fetching data: ', error);
+            // Error fetching data - fail silently in production
         } finally {
             isLoading.value = false;
         }

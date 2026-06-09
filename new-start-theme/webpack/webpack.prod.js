@@ -10,6 +10,9 @@ module.exports = merge(commonConfig, {
     minimizer: [
       new TerserPlugin({
         terserOptions: {
+          compress: {
+            drop_console: true,
+          },
           format: {
             comments: false,
           },

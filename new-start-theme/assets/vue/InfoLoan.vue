@@ -112,7 +112,7 @@ const fixedFeeWithInsurance = computed(() => {
 
 
 function onSubmit() {
-  console.log('Se mando el formulario')
+  status.value = 'This feature is coming soon. Thank you for your interest!'
 }
 </script>
 

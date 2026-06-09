@@ -19,8 +19,8 @@ $idSection = $cp->id_section;
 <?php endif; ?>
 
 <section
-        class="container--hero-banner animation--<?php echo $animationType ?> active--animation-<?php echo $activeAnimation ?> <?php echo $classCss ?>"
-        id="<?php echo $idSection ?>">
+        class="container--hero-banner animation--<?php echo esc_attr($animationType) ?> active--animation-<?php echo esc_attr($activeAnimation) ?> <?php echo esc_attr($classCss) ?>"
+        id="<?php echo esc_attr($idSection) ?>">
 
     <?php if (!empty($infoSliders)): ?>
         <div class="swiper mySwiper">
@@ -51,23 +51,23 @@ $idSection = $cp->id_section;
                                 <div class="container--text-cta">
                                     <?php if (!empty($image['hero_title'])): ?>
                                         <h1 class="title--hero">
-                                            <?php echo $image['hero_title']; ?>
-                                            <span class="second--title-hero"><?php echo $image['hero_second_title']; ?></span>
+                                            <?php echo wp_kses_post($image['hero_title']); ?>
+                                            <span class="second--title-hero"><?php echo wp_kses_post($image['hero_second_title']); ?></span>
                                         </h1>
                                     <?php endif; ?>
 
                                     <?php if (!empty($image['hero_subtitle'])): ?>
-                                        <h2 class="subtitle-hero"><?php echo $image['hero_subtitle']; ?></h2>
+                                        <h2 class="subtitle-hero"><?php echo wp_kses_post($image['hero_subtitle']); ?></h2>
                                     <?php endif; ?>
 
                                     <?php if (!empty($image['call_to_action']) || !empty($image['second_cta'])): ?>
                                         <div class="container--cta-hero">
                                             <?php if ($image['call_to_action']): ?>
-                                                <a href="<?php echo $image['call_to_action']['url']; ?>"><?php echo $image['call_to_action']['title']; ?></a>
+                                                <a href="<?php echo esc_url($image['call_to_action']['url']); ?>"><?php echo wp_kses_post($image['call_to_action']['title']); ?></a>
                                             <?php endif; ?>
                                             <?php if ($image['second_cta']): ?>
-                                                <a href="<?php echo $image['second_cta']['url']; ?>"
-                                                   aria-label="<?php echo $image['second_cta']['title'] ?>-link"><?php echo $image['second_cta']['title']; ?></a>
+                                                <a href="<?php echo esc_url($image['second_cta']['url']); ?>"
+                                                   aria-label="<?php echo esc_attr($image['second_cta']['title']) ?>-link"><?php echo wp_kses_post($image['second_cta']['title']); ?></a>
                                             <?php endif; ?>
                                         </div>
                                     <?php endif; ?>

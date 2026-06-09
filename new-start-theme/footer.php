@@ -22,8 +22,8 @@ $shortcodeNewsletter = get_field('shortcode_form', 'option');
     <div class="container--wrapper">
         <div class="site--logo site-footer">
             <?php if(!empty($footerLogo)):?>
-                <a href="<?php echo home_url() ?>">
-                    <img src="<?php echo $footerLogo ?>" alt="Logo footer">
+                <a href="<?php echo esc_url(home_url()) ?>">
+                    <img src="<?php echo esc_url($footerLogo) ?>" alt="Logo footer">
                 </a>
             <?php endif?>
 
@@ -32,8 +32,8 @@ $shortcodeNewsletter = get_field('shortcode_form', 'option');
                     <ul>
                         <?php foreach ($socialLinks as $links): ?>
                             <li>
-                                <a href="<?php echo $links['link_social_media'] ?>" target="_blank">
-                                    <img src="<?php echo $links['icon_image'] ?>" alt="icon image">
+                                <a href="<?php echo esc_url($links['link_social_media']) ?>" target="_blank">
+                                    <img src="<?php echo esc_url($links['icon_image']) ?>" alt="icon image">
                                 </a>
                             </li>
                         <?php endforeach; ?>
@@ -48,7 +48,7 @@ $shortcodeNewsletter = get_field('shortcode_form', 'option');
                     <ul class="container--quicklinks-one">
                         <?php foreach ($quickLinksWidgetOne as $linkOne): ?>
                             <li>
-                                <a href="<?php echo $linkOne['cta_widget_one']['url'] ?>"><?php echo $linkOne['cta_widget_one']['title'] ?></a>
+                                <a href="<?php echo esc_url($linkOne['cta_widget_one']['url']) ?>"><?php echo wp_kses_post($linkOne['cta_widget_one']['title']) ?></a>
                             </li>
                         <?php endforeach; ?>
                     </ul>
@@ -58,27 +58,27 @@ $shortcodeNewsletter = get_field('shortcode_form', 'option');
                     <ul class="container--quicklinks-two">
                         <?php foreach ($quickLinksWidgetTwo as $linkTwo): ?>
                             <li>
-                                <a href="<?php echo $linkTwo['cta_widget_two']['url'] ?>"><?php echo $linkTwo['cta_widget_two']['title'] ?></a>
+                                <a href="<?php echo esc_url($linkTwo['cta_widget_two']['url']) ?>"><?php echo wp_kses_post($linkTwo['cta_widget_two']['title']) ?></a>
                             </li>
                         <?php endforeach; ?>
                     </ul>
                 <?php endif?>
             </div>
         <?php endif?>
-        
+
         <?php if(!empty($titleNewsletter) || !empty($ctaNewsletter) || !empty($shortcodeNewsletter)):?>
             <div class="container--newsletter-footer">
                 <?php if(!empty($titleNewsletter)):?>
-                    <span class="title--newsletter"><?php echo $titleNewsletter ?></span>
+                    <span class="title--newsletter"><?php echo wp_kses_post($titleNewsletter) ?></span>
                 <?php endif?>
 
                 <?php if(!empty($ctaNewsletter)):?>
-                    <span class="cta--newsletter"><?php echo $ctaNewsletter ?></span>
+                    <span class="cta--newsletter"><?php echo wp_kses_post($ctaNewsletter) ?></span>
                 <?php endif?>
-    
+
                 <?php if(!empty($shortcodeNewsletter)):?>
                     <div class="container--form-newsletter">
-                        <?php echo do_shortcode($shortcodeNewsletter) ?>
+                        <?php echo wp_kses_post(do_shortcode($shortcodeNewsletter)) ?>
                     </div>
                 <?php endif?>
             </div>
